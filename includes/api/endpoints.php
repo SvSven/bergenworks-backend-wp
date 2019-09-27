@@ -2,6 +2,7 @@
 
 include('_getFrontpage.php');
 include('_getSiteInfo.php');
+include('_getMenus.php');
 
 $endpoints = [
     [
@@ -11,6 +12,14 @@ $endpoints = [
     [
         "endpoint" => "site-info",
         "callback" => "getSiteInfo"
+    ],
+    [
+        "endpoint" => "menus",
+        "callback" => "getAllMenus"
+    ],
+    [
+        "endpoint" => "menus/(?P<name>[a-zA-Z0-9-]+)",
+        "callback" => "getSpecificMenu"
     ]
 ];
 
