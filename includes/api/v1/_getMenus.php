@@ -8,7 +8,13 @@ function getAllMenus($request) {
 
     foreach($registered_menus as $key => $value) {
         $menu_object = wp_get_nav_menu_object($locations[$key]);
-        $output[$key] = wp_get_nav_menu_items($menu_object->term_id);
+        $menu = wp_get_nav_menu_items($menu_object->term_id);
+
+        if($menu) {
+            $menu = formatMenuOutput($menu);
+        }
+
+        $output[$key] = $menu;
     }
 
     return new WP_REST_Response($output, 200);
@@ -30,5 +36,29 @@ function getSpecificMenu($request) {
         return new WP_Error('empty_category', 'error retrieving menu', array('status' => 500));
     }
 
-    return new WP_REST_Response($menu, 200);
+    return new WP_REST_Response(formatMenuOutput($menu), 200);
+}
+
+function formatMenuOutput($menu) {
+    $output = [];
+
+    foreach($menu as $item) {
+        $slug = null;
+        if($item->object !== "custom") {
+            $post = get_post($item->object_id);
+            $slug = $post->post_name;
+        }
+
+        $output[] = [
+            "id" => (int)$item->object_id,
+            "menu_order" => $item->menu_order,
+            "type" => $item->object,
+            "title" => $item->title,
+            "slug" => $slug ? $slug : null,
+            "is_custom_link" => $item->object == "custom" ? true : false,
+            "custom_link_url" => $item->object == "custom" ? $item->url : null
+        ];
+    }
+
+    return $output;
 }
