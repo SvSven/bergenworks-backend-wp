@@ -24,7 +24,7 @@ $endpoints = [
 ];
 
 function registerEndpoint($endpoint, $callback) {
-    $namespace = "bw";
+    $namespace = "bw/v1";
     add_action('rest_api_init', function () use ($namespace, $endpoint, $callback) {
         register_rest_route($namespace, $endpoint,array(
                       'methods'  => 'GET',

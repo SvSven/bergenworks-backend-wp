@@ -1,6 +1,6 @@
 <?php
 
-include('includes/api/endpoints.php');
+include('includes/api/v1/endpoints.php');
 
 function register_menus() {
     register_nav_menu('main-menu', ('Main menu'));
