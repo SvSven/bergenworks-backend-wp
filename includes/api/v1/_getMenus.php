@@ -41,6 +41,7 @@ function getSpecificMenu($request) {
 
 function formatMenuOutput($menu) {
     $output = [];
+    $frontpage_id = get_option('page_on_front');
 
     foreach($menu as $item) {
         $slug = null;
@@ -55,6 +56,7 @@ function formatMenuOutput($menu) {
             "type" => $item->object,
             "title" => $item->title,
             "slug" => $slug ? $slug : null,
+            "is_frontpage" => (int)$item->object_id == $frontpage_id,
             "is_custom_link" => $item->object == "custom" ? true : false,
             "custom_link_url" => $item->object == "custom" ? $item->url : null
         ];
