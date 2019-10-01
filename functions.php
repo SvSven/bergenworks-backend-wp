@@ -7,3 +7,4 @@ add_action('init', 'register_menus');
 
 require_once('includes/api/v1/endpoints.php');
 require_once("includes/acf-options.php");
+require_once("includes/acf-blocks.php");
