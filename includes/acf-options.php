@@ -10,6 +10,12 @@ if(function_exists('acf_add_options_page')) {
     ));
 
     acf_add_options_sub_page(array(
+        'page_title' 	=> 'General Information',
+        'menu_title'	=> 'General',
+        'parent_slug'	=> 'site-options',
+    ));
+
+    acf_add_options_sub_page(array(
         'page_title' 	=> 'Contact Information',
         'menu_title'	=> 'Contact',
         'parent_slug'	=> 'site-options',
