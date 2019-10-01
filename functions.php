@@ -7,3 +7,5 @@ function register_menus() {
 }
 
 add_action('init', 'register_menus');
+
+require_once("includes/acf-options.php");
