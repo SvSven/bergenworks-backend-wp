@@ -14,4 +14,11 @@ if(function_exists('acf_add_options_page')) {
         'menu_title'	=> 'Contact',
         'parent_slug'	=> 'site-options',
     ));
+
+    acf_add_options_sub_page(array(
+        'page_title' 	=> 'Corporate Partners',
+        'menu_title'	=> 'Partners',
+        'parent_slug'	=> 'site-options',
+    ));
+
 }
