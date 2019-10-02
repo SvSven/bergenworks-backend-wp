@@ -8,10 +8,13 @@ function getAllMenus($request) {
 
     foreach($registered_menus as $key => $value) {
         $menu_object = wp_get_nav_menu_object($locations[$key]);
-        $menu = wp_get_nav_menu_items($menu_object->term_id);
+        $menu_items = wp_get_nav_menu_items($menu_object->term_id);
 
-        if($menu) {
-            $menu = formatMenuOutput($menu);
+        $menu = null;
+
+        if($menu_items) {
+            $menu["items"] = formatMenuOutput($menu_items);
+            $menu["name"] = $menu_object->name;
         }
 
         $output[$key] = $menu;
