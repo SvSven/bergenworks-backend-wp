@@ -3,6 +3,7 @@
 require_once('_getFrontpage.php');
 require_once('_getSiteInfo.php');
 require_once('_getMenus.php');
+require_once('_getPage.php');
 
 $endpoints = [
     [
@@ -20,6 +21,10 @@ $endpoints = [
     [
         "endpoint" => "menus/(?P<name>[a-zA-Z0-9-]+)",
         "callback" => "getSpecificMenu"
+    ],
+    [
+        "endpoint" => "page/(?P<slug>[a-zA-Z0-9-]+)",
+        "callback" => "getPage"
     ]
 ];
 
