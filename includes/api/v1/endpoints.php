@@ -1,6 +1,5 @@
 <?php
 
-require_once('_getFrontpage.php');
 require_once('_getSiteInfo.php');
 require_once('_getMenus.php');
 require_once('_getPage.php');
