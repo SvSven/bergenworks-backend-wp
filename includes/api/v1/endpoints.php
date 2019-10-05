@@ -19,11 +19,19 @@ $endpoints = [
         "callback" => "getSpecificMenu"
     ],
     [
-        "endpoint" => "page/(?P<slug>[a-zA-Z0-9-]+)",
+        "endpoint" => "pages",
+        "callback" => "getAllPages"
+    ],
+    [
+        "endpoint" => "pages/(?P<slug>[a-zA-Z0-9-]+)",
         "callback" => "getPage"
     ],
     [
-        "endpoint" => "post/(?P<slug>[a-zA-Z0-9-]+)",
+        "endpoint" => "posts",
+        "callback" => "getAllPosts"
+    ],
+    [
+        "endpoint" => "posts/(?P<slug>[a-zA-Z0-9-]+)",
         "callback" => "getPost"
     ]
 ];

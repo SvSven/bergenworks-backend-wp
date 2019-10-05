@@ -30,3 +30,14 @@ function getPage($request) {
 
     return new WP_REST_Response($response->get_data(), 200);
 }
+
+function getAllPages($request) {
+    $pages_request  = new WP_REST_Request('GET', '/wp/v2/pages');
+    $response = rest_do_request($pages_request);
+
+    if ($response->is_error()) {
+        return new WP_Error('empty_category', 'error retrieving pages', array('status' => 500));
+    }
+
+    return new WP_REST_Response($response->get_data(), 200);
+}

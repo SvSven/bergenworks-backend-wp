@@ -25,3 +25,14 @@ function getPost($request) {
 
     return new WP_REST_Response($response->get_data(), 200);
 }
+
+function getAllPosts($request) {
+    $posts_request  = new WP_REST_Request('GET', '/wp/v2/posts');
+    $response = rest_do_request($posts_request);
+
+    if ($response->is_error()) {
+        return new WP_Error('empty_category', 'error retrieving posts', array('status' => 500));
+    }
+
+    return new WP_REST_Response($response->get_data(), 200);
+}
