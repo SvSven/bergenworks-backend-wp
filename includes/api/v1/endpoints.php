@@ -8,10 +8,6 @@ require_once('_getPost.php');
 
 $endpoints = [
     [
-        "endpoint" => "frontpage",
-        "callback" => "getFrontpage"
-    ],
-    [
         "endpoint" => "site-info",
         "callback" => "getSiteInfo"
     ],
