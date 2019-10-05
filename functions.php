@@ -10,6 +10,10 @@ add_filter('rest_url', function($url) {
     return $url;
 });
 
+add_filter('rest_url_prefix', function() {
+    return 'api';
+});
+
 function register_menus() {
     register_nav_menu('main-menu', ('Main menu'));
     register_nav_menu('footer-left', ('Footer menu left'));
