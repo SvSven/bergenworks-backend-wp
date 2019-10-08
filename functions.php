@@ -14,6 +14,23 @@ add_filter('rest_url_prefix', function() {
     return 'api';
 });
 
+add_theme_support( 'post-thumbnails' );
+add_action( 'rest_pre_echo_response', 'addFeaturedImageToRest', 10, 3);
+
+function addFeaturedImageToRest($response, $object, $request) {
+    $post_id = $response['id'];
+
+    $featured_image = null;
+
+    if (has_post_thumbnail($post_id)) {
+        $featured_image = get_the_post_thumbnail_url($post_id);
+    }
+
+    $response['featured_image'] = $featured_image;
+
+    return $response;
+}
+
 function register_menus() {
     register_nav_menu('main-menu', ('Main menu'));
     register_nav_menu('footer-left', ('Footer menu left'));
