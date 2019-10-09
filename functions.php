@@ -20,7 +20,7 @@ add_action( 'rest_pre_echo_response', 'addFeaturedImageToRest', 10, 3);
 function addFeaturedImageToRest($response, $object, $request) {
     $post_id = $response['id'];
 
-    $featured_image = null;
+    $featured_image = false;
 
     if (has_post_thumbnail($post_id)) {
         $featured_image = get_the_post_thumbnail_url($post_id);
