@@ -23,13 +23,15 @@ function addFeaturedImageToRest($response, $object, $request) {
     $featured_image = false;
 
     if (has_post_thumbnail($post_id)) {
-        $featured_image = get_the_post_thumbnail_url($post_id);
+        $featured_image = get_the_post_thumbnail_url($post_id, 'page_hero');
     }
 
     $response['featured_image'] = $featured_image;
 
     return $response;
 }
+
+add_image_size('page_hero', 2800, 1500, false);
 
 function register_menus() {
     register_nav_menu('main-menu', ('Main menu'));
