@@ -15,21 +15,6 @@ add_filter('rest_url_prefix', function() {
 });
 
 add_theme_support( 'post-thumbnails' );
-add_action( 'rest_pre_echo_response', 'addFeaturedImageToRest', 10, 3);
-
-function addFeaturedImageToRest($response, $object, $request) {
-    $post_id = $response['id'];
-
-    $featured_image = false;
-
-    if (has_post_thumbnail($post_id)) {
-        $featured_image = get_the_post_thumbnail_url($post_id, 'page_hero');
-    }
-
-    $response['featured_image'] = $featured_image;
-
-    return $response;
-}
 
 add_image_size('page_hero', 2800, 1500, false);
 
@@ -42,5 +27,6 @@ function register_menus() {
 add_action('init', 'register_menus');
 
 require_once('includes/api/v1/endpoints.php');
+require_once('includes/api/v1/custom-rest-fields.php');
 require_once("includes/acf-options.php");
 require_once("includes/acf-blocks.php");
