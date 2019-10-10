@@ -26,6 +26,7 @@ function register_menus() {
 }
 add_action('init', 'register_menus');
 
+require_once('includes/disable-editors.php');
 require_once('includes/api/v1/endpoints.php');
 require_once('includes/api/v1/custom-rest-fields.php');
 require_once("includes/acf-options.php");
