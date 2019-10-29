@@ -8,4 +8,12 @@ add_action( 'rest_api_init', function () {
             return get_the_post_thumbnail_url($post_id, 'page_hero');
         }
     ) );
+
+    if (function_exists('get_fields')) {
+        register_rest_field( ['page', 'post'], 'acf_content', array(
+            'get_callback' => function($post) {
+                return get_fields($post['id']);
+            }
+        ));
+    }
 } );
