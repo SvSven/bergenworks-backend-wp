@@ -7,9 +7,7 @@
  */
 function disable_editors($id) {
     // Path of page template(s) to exclude
-    $excluded_templates = [
-        null
-    ];
+    $excluded_templates = [];
 
     // IDs of post/page to exclude
     $excluded_ids = [
