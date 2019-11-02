@@ -1,4 +1,11 @@
 <?php
+/**
+ * Prevent WordPress from redirecting index.php to site_url()
+ * We want to use two separate URLs - one for the CMS and one for the frontend
+ * Changing the "WordPress Address (URL)" and "Site Address (URL)" however causes
+ * a redirect to occur when visiting the "WordPress Address" directly.
+ */
+remove_filter('template_redirect','redirect_canonical');
 
 /**
  * For some reason, WordPress has decided to use the value of the "Site Address" setting instead of
