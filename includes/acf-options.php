@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Add a custom path to icons for the
+ * ACF Icon Picker plugin
+ */
+add_filter('acf_icon_path_suffix', function() {
+    return 'assets/icons/';
+});
+
 if(function_exists('acf_add_options_page')) {
     acf_add_options_page(array(
         'page_title' 	=> 'Custom Site Options',
