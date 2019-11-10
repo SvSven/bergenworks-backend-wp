@@ -36,6 +36,8 @@ add_action('init', 'register_menus');
 require_once('includes/disable-editors.php');
 require_once('includes/api/v1/endpoints.php');
 require_once('includes/api/v1/custom-rest-fields.php');
-require_once("includes/acf-options.php");
-require_once("includes/acf-blocks.php");
-require_once("includes/acf/BergenWorks_ACF_Fields.php");
+
+/**
+ * Functionality to extend Advanced Custom Fields
+ */
+require_once("includes/acf/BergenWorks_ACF.php");

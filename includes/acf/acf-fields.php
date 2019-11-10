@@ -1,5 +1,7 @@
 <?php
 
+if (!class_exists('acf_field')) return;
+
 class BergenWorks_ACF_Fields {
 	public function __construct() {
 		$this->settings = [
