@@ -28,3 +28,6 @@ function register_blocks() {
         'keywords'          => ['testimonial', 'quote'],
     ));
 }
+
+// Register local fields for blocks
+include('blocks/testimonial_fields.php');
