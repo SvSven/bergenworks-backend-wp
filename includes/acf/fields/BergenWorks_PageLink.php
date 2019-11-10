@@ -30,7 +30,7 @@ class BergenWorks_PageLink extends acf_field_page_link {
             'id' => $page->ID,
             'type' => $page->post_type,
             'title' => $page->post_name,
-            'path' => $page->post_name,
+            'slug' => $page->post_name,
             'url' => get_permalink($page->ID),
             'is_frontpage' => $page->ID == get_option('page_on_front')
         ];
