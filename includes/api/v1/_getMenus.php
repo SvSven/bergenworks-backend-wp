@@ -1,4 +1,5 @@
 <?php
+namespace bergenworks\api\v1;
 
 function getAllMenus($request) {
     $locations = get_nav_menu_locations();

@@ -1,9 +1,10 @@
 <?php
+namespace bergenworks\acf;
 
 if (!function_exists('acf_register_block_type')) return;
 
-add_filter('block_categories', 'register_block_categories', 10, 2);
-add_action('acf/init', 'register_blocks');
+add_filter('block_categories', 'bergenworks\acf\register_block_categories', 10, 2);
+add_action('acf/init', 'bergenworks\acf\register_blocks');
 
 function register_block_categories($categories, $post) {
     return array_merge(

@@ -1,4 +1,6 @@
 <?php
+namespace bergenworks;
+
 /**
  * Prevent WordPress from redirecting index.php to site_url()
  * We want to use two separate URLs - one for the CMS and one for the frontend
@@ -31,7 +33,7 @@ function register_menus() {
     register_nav_menu('footer-center', ('Footer menu center'));
     register_nav_menu('footer-right', ('Footer menu right'));
 }
-add_action('init', 'register_menus');
+add_action('init', 'bergenworks\register_menus');
 
 require_once('includes/disable-editors.php');
 require_once('includes/api/v1/endpoints.php');

@@ -1,4 +1,5 @@
 <?php
+namespace bergenworks;
 
 /**
  * Check if content editors should be disabled for given post/page
@@ -23,8 +24,8 @@ function disable_editors($id) {
 function disable_gutenberg($can_edit, $post_type) {
     return disable_editors($_GET['post']) ? false : true;
 }
-add_filter( 'gutenberg_can_edit_post_type', 'disable_gutenberg', 10, 2 );
-add_filter( 'use_block_editor_for_post_type', 'disable_gutenberg', 10, 2 );
+add_filter( 'gutenberg_can_edit_post_type', 'bergenworks\disable_gutenberg', 10, 2 );
+add_filter( 'use_block_editor_for_post_type', 'bergenworks\disable_gutenberg', 10, 2 );
 
 function disable_classic_editor() {
 	if(!isset($_GET['post'])) return;
@@ -33,4 +34,4 @@ function disable_classic_editor() {
 		remove_post_type_support( 'page', 'editor' );
 	}
 }
-add_action( 'admin_head', 'disable_classic_editor' );
+add_action( 'admin_head', 'bergenworks\disable_classic_editor' );

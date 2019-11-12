@@ -1,4 +1,5 @@
 <?php
+namespace bergenworks\api\v1;
 
 // Add featured_image url to rest API response for page/post hero image
 add_action( 'rest_api_init', function () {

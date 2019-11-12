@@ -1,6 +1,7 @@
 <?php
+namespace bergenworks\acf\fields;
 
-class BergenWorks_PageLink extends acf_field_page_link {
+class BergenWorks_PageLink extends \acf_field_page_link {
     public function initialize() {
         parent::initialize();
 

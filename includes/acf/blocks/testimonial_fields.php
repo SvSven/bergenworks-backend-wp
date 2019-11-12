@@ -1,6 +1,7 @@
 <?php
+namespace bergenworks\acf\blocks;
 
-add_action('acf/init', 'register_testimonial_fields');
+add_action('acf/init', 'bergenworks\acf\blocks\register_testimonial_fields');
 
 function register_testimonial_fields() {
     $fields = [

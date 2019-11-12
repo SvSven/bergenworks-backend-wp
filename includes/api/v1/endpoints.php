@@ -1,4 +1,5 @@
 <?php
+namespace bergenworks\api\v1;
 
 require_once('_getSiteInfo.php');
 require_once('_getMenus.php');

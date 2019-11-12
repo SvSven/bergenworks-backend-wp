@@ -1,0 +1,10 @@
+{
+    "name": "sven/bergenworks",
+    "type": "project",
+    "autoload" : {
+		"psr-4" : {
+			"bergenworks\\" : "includes"
+		}
+	},
+    "require": {}
+}

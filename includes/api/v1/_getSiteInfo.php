@@ -1,4 +1,5 @@
 <?php
+namespace bergenworks\api\v1;
 
 function getSiteInfo($request) {
 

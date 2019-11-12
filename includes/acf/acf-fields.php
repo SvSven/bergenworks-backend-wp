@@ -1,4 +1,5 @@
 <?php
+namespace bergenworks\acf;
 
 if (!class_exists('acf_field')) return;
 

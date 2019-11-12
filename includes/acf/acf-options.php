@@ -1,4 +1,5 @@
 <?php
+namespace bergenworks\acf;
 
 /**
  * Add custom path to icons for Icon Picker plugin
