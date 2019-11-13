@@ -10,5 +10,5 @@ function getSiteInfo($request) {
         "site_description" => get_bloginfo("description")
     ];
 
-    return new WP_REST_Response(array_merge($data, $acf_options), 200);
+    return new \WP_REST_Response(array_merge($data, $acf_options), 200);
 }

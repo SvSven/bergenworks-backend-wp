@@ -9,31 +9,31 @@ require_once('_getPost.php');
 $endpoints = [
     [
         "endpoint" => "site-info",
-        "callback" => "getSiteInfo"
+        "callback" => 'bergenworks\api\v1\getSiteInfo'
     ],
     [
         "endpoint" => "menus",
-        "callback" => "getAllMenus"
+        "callback" => 'bergenworks\api\v1\getAllMenus'
     ],
     [
         "endpoint" => "menus/(?P<name>[a-zA-Z0-9-]+)",
-        "callback" => "getSpecificMenu"
+        "callback" => 'bergenworks\api\v1\getSpecificMenu'
     ],
     [
         "endpoint" => "pages",
-        "callback" => "getAllPages"
+        "callback" => 'bergenworks\api\v1\getAllPages'
     ],
     [
         "endpoint" => "pages/(?P<slug>[a-zA-Z0-9-]+)",
-        "callback" => "getPage"
+        "callback" => 'bergenworks\api\v1\getPage'
     ],
     [
         "endpoint" => "posts",
-        "callback" => "getAllPosts"
+        "callback" => 'bergenworks\api\v1\getAllPosts'
     ],
     [
         "endpoint" => "posts/(?P<slug>[a-zA-Z0-9-]+)",
-        "callback" => "getPost"
+        "callback" => 'bergenworks\api\v1\getPost'
     ]
 ];
 

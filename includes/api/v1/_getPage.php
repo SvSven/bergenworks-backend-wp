@@ -19,26 +19,26 @@ function getPage($request) {
     }
 
     if (!$id) {
-        return new WP_Error('empty_category', 'could not find requested page', array('status' => 404));
+        return new \WP_Error('empty_category', 'could not find requested page', array('status' => 404));
     }
 
-    $page_request  = new WP_REST_Request('GET', '/wp/v2/pages/' . $id);
+    $page_request  = new \WP_REST_Request('GET', '/wp/v2/pages/' . $id);
     $response = rest_do_request($page_request);
 
     if ($response->is_error()) {
-        return new WP_Error('empty_category', 'error retrieving page', array('status' => 500));
+        return new \WP_Error('empty_category', 'error retrieving page', array('status' => 500));
     }
 
-    return new WP_REST_Response($response->get_data(), 200);
+    return new \WP_REST_Response($response->get_data(), 200);
 }
 
 function getAllPages($request) {
-    $pages_request  = new WP_REST_Request('GET', '/wp/v2/pages');
+    $pages_request  = new \WP_REST_Request('GET', '/wp/v2/pages');
     $response = rest_do_request($pages_request);
 
     if ($response->is_error()) {
-        return new WP_Error('empty_category', 'error retrieving pages', array('status' => 500));
+        return new \WP_Error('empty_category', 'error retrieving pages', array('status' => 500));
     }
 
-    return new WP_REST_Response($response->get_data(), 200);
+    return new \WP_REST_Response($response->get_data(), 200);
 }

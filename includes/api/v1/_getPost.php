@@ -14,26 +14,26 @@ function getPost($request) {
     $id = $post->ID;
 
     if (!$id) {
-        return new WP_Error('empty_category', 'could not find requested post', array('status' => 404));
+        return new \WP_Error('empty_category', 'could not find requested post', array('status' => 404));
     }
 
-    $post_request  = new WP_REST_Request('GET', '/wp/v2/posts/' . $id);
+    $post_request  = new \WP_REST_Request('GET', '/wp/v2/posts/' . $id);
     $response = rest_do_request($post_request);
 
     if ($response->is_error()) {
-        return new WP_Error('empty_category', 'error retrieving post', array('status' => 500));
+        return new \WP_Error('empty_category', 'error retrieving post', array('status' => 500));
     }
 
-    return new WP_REST_Response($response->get_data(), 200);
+    return new \WP_REST_Response($response->get_data(), 200);
 }
 
 function getAllPosts($request) {
-    $posts_request  = new WP_REST_Request('GET', '/wp/v2/posts');
+    $posts_request  = new \WP_REST_Request('GET', '/wp/v2/posts');
     $response = rest_do_request($posts_request);
 
     if ($response->is_error()) {
-        return new WP_Error('empty_category', 'error retrieving posts', array('status' => 500));
+        return new \WP_Error('empty_category', 'error retrieving posts', array('status' => 500));
     }
 
-    return new WP_REST_Response($response->get_data(), 200);
+    return new \WP_REST_Response($response->get_data(), 200);
 }

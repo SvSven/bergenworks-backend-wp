@@ -21,7 +21,7 @@ function getAllMenus($request) {
         $output[$key] = $menu;
     }
 
-    return new WP_REST_Response($output, 200);
+    return new \WP_REST_Response($output, 200);
 }
 
 function getSpecificMenu($request) {
@@ -31,16 +31,16 @@ function getSpecificMenu($request) {
     $menu_object = wp_get_nav_menu_object($menu_locations[$menu_name]);
 
     if(!$menu_object) {
-        return new WP_Error('empty_category', 'could not find menu', array('status' => 404));
+        return new \WP_Error('empty_category', 'could not find menu', array('status' => 404));
     }
 
     $menu = wp_get_nav_menu_items($menu_object->term_id);
 
     if(!$menu) {
-        return new WP_Error('empty_category', 'error retrieving menu', array('status' => 500));
+        return new \WP_Error('empty_category', 'error retrieving menu', array('status' => 500));
     }
 
-    return new WP_REST_Response(formatMenuOutput($menu), 200);
+    return new \WP_REST_Response(formatMenuOutput($menu), 200);
 }
 
 function formatMenuOutput($menu) {
