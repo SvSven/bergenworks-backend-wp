@@ -1,1 +1,3 @@
 /vendor/
+/includes/api/v1/page_cache/*
+!/includes/api/v1/page_cache/.gitkeep

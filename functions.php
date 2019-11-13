@@ -2,6 +2,8 @@
 namespace bergenworks;
 require_once __DIR__ . '/vendor/autoload.php';
 
+use bergenworks\api\v1\utils\PageContent;
+
 /**
  * Prevent WordPress from redirecting index.php to site_url()
  * We want to use two separate URLs - one for the CMS and one for the frontend
@@ -35,6 +37,20 @@ function register_menus() {
     register_nav_menu('footer-right', ('Footer menu right'));
 }
 add_action('init', 'bergenworks\register_menus');
+
+add_action('save_post', function($post_id, $post, $update) {
+    if ($parent_id = wp_is_post_revision($post_id)) {
+        $post_id = $parent_id;
+    }
+
+    $content = new PageContent($post_id);
+
+    if($content) {
+        $content->createCache();
+    }
+
+    return true;
+  }, 10, 3 );
 
 require_once('includes/disable-editors.php');
 require_once('includes/api/v1/endpoints.php');
