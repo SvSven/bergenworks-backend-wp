@@ -1,5 +1,6 @@
 <?php
 namespace bergenworks;
+require_once __DIR__ . '/vendor/autoload.php';
 
 /**
  * Prevent WordPress from redirecting index.php to site_url()
