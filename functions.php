@@ -59,4 +59,4 @@ require_once('includes/api/v1/custom-rest-fields.php');
 /**
  * Functionality to extend Advanced Custom Fields
  */
-require_once("includes/acf/BergenWorks_ACF.php");
+require_once("includes/acf/config.php");

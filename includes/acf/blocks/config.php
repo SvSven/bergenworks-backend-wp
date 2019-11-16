@@ -1,10 +1,10 @@
 <?php
-namespace bergenworks\acf;
+namespace bergenworks\acf\blocks;
 
 if (!function_exists('acf_register_block_type')) return;
 
-add_filter('block_categories', 'bergenworks\acf\register_block_categories', 10, 2);
-add_action('acf/init', 'bergenworks\acf\register_blocks');
+add_filter('block_categories', 'bergenworks\acf\blocks\register_block_categories', 10, 2);
+add_action('acf/init', 'bergenworks\acf\blocks\register_blocks');
 
 function register_block_categories($categories, $post) {
     return array_merge(
@@ -31,4 +31,4 @@ function register_blocks() {
 }
 
 // Register local fields for blocks
-include('blocks/testimonial_fields.php');
+include('testimonial_fields.php');

@@ -1,11 +1,14 @@
 <?php
-namespace bergenworks\acf;
+namespace bergenworks\acf\fieldtypes;
 
-use bergenworks\acf\fieldtypes\BergenWorks_PageLink;
+use bergenworks\acf\fieldtypes\PageLink;
 
 if (!class_exists('acf_field')) return;
 
-class BergenWorks_ACF_Fields {
+/**
+ * Register custom ACF field types
+ */
+class FieldTypes {
 	public function __construct() {
 		$this->settings = [
 			'version'	=> '1.0.0',
@@ -17,8 +20,7 @@ class BergenWorks_ACF_Fields {
 	}
 
 	public function include_field_types($version = false) {
-		new BergenWorks_PageLink($this->settings);
+		new PageLink($this->settings);
 	}
 }
-
-new BergenWorks_ACF_Fields();
+new FieldTypes();
