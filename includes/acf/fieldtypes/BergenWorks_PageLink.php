@@ -1,5 +1,5 @@
 <?php
-namespace bergenworks\acf\fields;
+namespace bergenworks\acf\fieldtypes;
 
 class BergenWorks_PageLink extends \acf_field_page_link {
     public function initialize() {
@@ -71,4 +71,3 @@ class BergenWorks_PageLink extends \acf_field_page_link {
         ]);
     }
 }
-new BergenWorks_PageLink($this->settings);
