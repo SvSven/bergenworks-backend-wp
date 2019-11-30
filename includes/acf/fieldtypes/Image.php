@@ -25,7 +25,8 @@ class Image extends \acf_field_image {
 
         return [
             "id" => $id,
-            "url" => $image[0]
+            "url" => $image[0],
+            "alt" => get_post_meta($id, '_wp_attachment_image_alt', true)
         ];
     }
 }
