@@ -17,13 +17,6 @@ add_action( 'rest_api_init', function () {
             'get_callback' => function($post) {
                 $page_content = new PageContent($post->ID);
                 $content = $page_content->get();
-
-                // TODO: Create new image field that allows for picking of image size
-                if($post['id'] == get_option('page_on_front')) {
-                    $img_id = $content['hero_section']['image'];
-                    $content['hero_section']['image'] = wp_get_attachment_image_url($img_id, 'page_hero');
-                }
-
                 return $content;
             }
         ));
