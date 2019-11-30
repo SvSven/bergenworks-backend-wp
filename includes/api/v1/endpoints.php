@@ -5,6 +5,7 @@ require_once('_getSiteInfo.php');
 require_once('_getMenus.php');
 require_once('_getPage.php');
 require_once('_getPost.php');
+require_once('_getImage.php');
 
 $endpoints = [
     [
@@ -34,6 +35,10 @@ $endpoints = [
     [
         "endpoint" => "posts/(?P<slug>[a-zA-Z0-9-]+)",
         "callback" => 'bergenworks\api\v1\getPost'
+    ],
+    [
+        "endpoint" => "image/(?P<id>[0-9-]+)",
+        "callback" => 'bergenworks\api\v1\getImage'
     ]
 ];
 
