@@ -27,9 +27,9 @@ class PageContentFormat {
 
     public static $home = [
         'hero_section' => [
-            'image' => 'hero_content_image',
-            'title' => 'hero_content_title',
-            'subtitle' => 'hero_content_subtitle',
+            'image' => 'hero_image',
+            'title' => 'hero_title',
+            'subtitle' => 'hero_subtitle',
             'blocks' => 'hero_blocks'
         ]
     ];
