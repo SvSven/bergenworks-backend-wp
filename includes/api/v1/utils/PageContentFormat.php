@@ -31,6 +31,13 @@ class PageContentFormat {
             'title' => 'hero_title',
             'subtitle' => 'hero_subtitle',
             'blocks' => 'hero_blocks'
-        ]
+        ],
+        'intro_section' => [
+            'title' => 'intro_title',
+            'text' => 'intro_content',
+            'image' => 'intro_image',
+            'button' => 'intro_button',
+            'testimonial' => 'intro_testimonial'
+        ],
     ];
 }

@@ -13,7 +13,7 @@ class Frontpage {
         ],
     ];
 
-    public $field_groups = ['hero_section'];
+    public $field_groups = ['hero_section', 'intro_section'];
 
     public function register() {
         foreach($this->field_groups as $group) {
@@ -105,6 +105,104 @@ class Frontpage {
         ],
         'location' => [self::LOCATION],
         'menu_order' => 0,
+        'position' => 'normal',
+    ];
+
+    public $intro_section = [
+        'key' => self::GROUP_PREFIX . 'intro',
+        'title' => 'Intro section',
+        'fields' => [
+            [
+                'key' => self::FIELD_PREFIX . 'intro_title',
+                'label' => 'Title',
+                'name' => 'intro_title',
+                'type' => 'text',
+                'required' => 0,
+                'conditional_logic' => 0,
+            ],
+            [
+                'key' => self::FIELD_PREFIX . 'intro',
+                'label' => 'Intro',
+                'name' => 'intro',
+                'type' => 'group',
+                'required' => 0,
+                'layout' => 'table',
+                'sub_fields' => [
+                    [
+                        'key' => self::FIELD_PREFIX . 'intro_content',
+                        'label' => 'Content',
+                        'name' => 'content',
+                        'type' => 'textarea',
+                        'required' => 0,
+                        'new_lines' => 'wpautop',
+                    ],
+                    [
+                        'key' => self::FIELD_PREFIX . 'intro_image',
+                        'label' => 'Image',
+                        'name' => 'image',
+                        'type' => 'bw_image',
+                        'required' => 0,
+                        'return_format' => 'array',
+                        'preview_size' => 'thumbnail',
+                        'library' => 'all',
+                    ],
+                ],
+            ],
+            [
+                'key' => self::FIELD_PREFIX . 'intro_button',
+                'label' => 'Button',
+                'name' => 'intro_button',
+                'type' => 'link',
+                'required' => 0,
+                'return_format' => 'array',
+            ],
+            [
+                'key' => self::FIELD_PREFIX . 'intro_testimonial',
+                'label' => 'Testimonial',
+                'name' => 'intro_testimonial',
+                'type' => 'group',
+                'required' => 0,
+                'layout' => 'table',
+                'sub_fields' => [
+                    [
+                        'key' => self::FIELD_PREFIX . 'intro_testimonial_text',
+                        'label' => 'text',
+                        'name' => 'text',
+                        'type' => 'textarea',
+                        'required' => 0,
+                    ],
+                    [
+                        'key' => self::FIELD_PREFIX . 'intro_testimonial_author',
+                        'label' => 'author',
+                        'name' => 'author',
+                        'type' => 'text',
+                        'required' => 0,
+                    ],
+                    [
+                        'key' => self::FIELD_PREFIX . 'intro_testimonial_role',
+                        'label' => 'role',
+                        'name' => 'role',
+                        'type' => 'text',
+                        'required' => 0,
+                    ],
+                    [
+                        'key' => self::FIELD_PREFIX . 'intro_testimonial_image',
+                        'label' => 'image',
+                        'name' => 'image',
+                        'type' => 'bw_image',
+                        'required' => 0,
+                        'return_format' => 'array',
+                        'preview_size' => 'thumbnail',
+                        'library' => 'all',
+                        'allow_null' => 0,
+                        'multiple' => 0,
+                        'allow_archives' => 0,
+                    ],
+                ],
+            ],
+        ],
+        'location' => [self::LOCATION],
+        'menu_order' => 1,
         'position' => 'normal',
     ];
 }
