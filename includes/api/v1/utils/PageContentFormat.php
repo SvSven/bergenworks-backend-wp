@@ -39,5 +39,12 @@ class PageContentFormat {
             'button' => 'intro_button',
             'testimonial' => 'intro_testimonial'
         ],
+        'highlight_section' => [
+            'image' => 'highlight_image',
+            'title' => 'highlight_content_title',
+            'text' => 'highlight_content_text',
+            'button_label' => 'highlight_content_link_label',
+            'button_link' => 'highlight_content_link'
+        ]
     ];
 }

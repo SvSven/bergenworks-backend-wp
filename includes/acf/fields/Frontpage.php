@@ -13,7 +13,7 @@ class Frontpage {
         ],
     ];
 
-    public $field_groups = ['hero_section', 'intro_section'];
+    public $field_groups = ['hero_section', 'intro_section', 'highlight_section'];
 
     public function register() {
         foreach($this->field_groups as $group) {
@@ -205,4 +205,81 @@ class Frontpage {
         'menu_order' => 1,
         'position' => 'normal',
     ];
+
+    public $highlight_section = [
+        'key' => self::GROUP_PREFIX . 'highlight_section',
+        'title' => 'Highlight section',
+        'fields' => [
+            [
+                'key' => self::FIELD_PREFIX . 'highlight',
+                'label' => '',
+                'name' => 'highlight',
+                'type' => 'group',
+                'required' => 0,
+                'layout' => 'table',
+                'sub_fields' => [
+                    [
+                        'key' => self::FIELD_PREFIX . 'highlight_image',
+                        'label' => 'Image',
+                        'name' => 'image',
+                        'type' => 'bw_image',
+                        'required' => 0,
+                        'return_format' => 'array',
+                        'preview_size' => 'medium',
+                        'library' => 'all',
+                        'allow_null' => 0,
+                        'multiple' => 0,
+                        'allow_archives' => 0,
+                    ],
+                    [
+                        'key' => self::FIELD_PREFIX . 'highlight_content',
+                        'label' => 'Content',
+                        'name' => 'content',
+                        'type' => 'group',
+                        'required' => 0,
+                        'layout' => 'block',
+                        'sub_fields' => [
+                            [
+                                'key' => self::FIELD_PREFIX . 'highlight_content_title',
+                                'label' => 'Title',
+                                'name' => 'title',
+                                'type' => 'text',
+                                'required' => 0,
+                            ],
+                            [
+                                'key' => self::FIELD_PREFIX . 'highlight_content_text',
+                                'label' => 'Text',
+                                'name' => 'text',
+                                'type' => 'textarea',
+                                'required' => 0,
+                                'new_lines' => 'wpautop',
+                            ],
+                            [
+                                'key' => self::FIELD_PREFIX . 'highlight_content_link_label',
+                                'label' => 'Link label',
+                                'name' => 'link_label',
+                                'type' => 'text',
+                                'required' => 0,
+                            ],
+                            [
+                                'key' => self::FIELD_PREFIX . 'highlight_content_link',
+                                'label' => 'Link',
+                                'name' => 'link',
+                                'type' => 'bw_page_link',
+                                'required' => 0,
+                                'allow_null' => 0,
+                                'allow_archives' => 0,
+                                'multiple' => 0,
+                                'return_format' => 'bw_api',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'location' => [self::LOCATION],
+        'menu_order' => 2,
+        'position' => 'normal',
+    ];
+
 }
