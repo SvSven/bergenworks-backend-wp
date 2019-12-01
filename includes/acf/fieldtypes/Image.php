@@ -17,6 +17,20 @@ class Image extends \acf_field_image {
         ];
     }
 
+    public function render_field($field) {
+        parent::render_field($field);
+        ?>
+        <script>
+            (function($){
+                const Field = acf.models.ImageField.extend({
+                    type: 'bw-image',
+                });
+                acf.registerFieldType(Field);
+            })(jQuery);
+        </script>
+        <?php
+    }
+
     function format_value( $value, $post_id, $field ) {
         if( empty($value) || !is_numeric($value) ) return false;
 
