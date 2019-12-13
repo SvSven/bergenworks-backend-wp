@@ -13,7 +13,7 @@ class Frontpage {
         ],
     ];
 
-    public $field_groups = ['hero_section', 'intro_section', 'highlight_section'];
+    public $field_groups = ['hero_section', 'intro_section', 'membership_plans', 'highlight_section'];
 
     public function register() {
         foreach($this->field_groups as $group) {
@@ -206,6 +206,38 @@ class Frontpage {
         'position' => 'normal',
     ];
 
+    public $membership_plans = [
+        'key' => self::FIELD_PREFIX . 'highlighted_memberships',
+        'title' => 'Highlighted membership plans',
+        'fields' => [
+            [
+                'key' => self::FIELD_PREFIX . 'highlighted_memberships_message',
+                'label' => '',
+                'name' => '',
+                'type' => 'message',
+                'message' => 'Here you can select which membership plans you wish to highlight on the front page. You can view and edit each membership plan on the memberships page. Membership plans can be selected in the left column, and selected plans can be dragged to re-arrange them in the right column.',
+            ],
+            [
+                'key' => self::FIELD_PREFIX . 'highlighted_memberships_selected',
+                'label' => 'Selected plans',
+                'name' => 'membership_plans',
+                'type' => 'relationship',
+                'required' => 0,
+                'post_type' => [
+                    0 => 'membership',
+                ],
+                'taxonomy' => '',
+                'filters' => '',
+                'elements' => '',
+                'return_format' => 'object',
+                'return_as_bw_api' => 1,
+            ],
+        ],
+        'location' => [self::LOCATION],
+        'menu_order' => 2,
+        'position' => 'normal'
+    ];
+
     public $highlight_section = [
         'key' => self::GROUP_PREFIX . 'highlight_section',
         'title' => 'Highlight section',
@@ -278,7 +310,7 @@ class Frontpage {
             ],
         ],
         'location' => [self::LOCATION],
-        'menu_order' => 2,
+        'menu_order' => 3,
         'position' => 'normal',
     ];
 

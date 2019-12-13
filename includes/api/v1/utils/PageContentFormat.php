@@ -39,6 +39,7 @@ class PageContentFormat {
             'button' => 'intro_button',
             'testimonial' => 'intro_testimonial'
         ],
+        'membership_plans' => 'membership_plans',
         'highlight_section' => [
             'image' => 'highlight_image',
             'title' => 'highlight_content_title',
