@@ -207,7 +207,7 @@ class Frontpage {
     ];
 
     public $membership_plans = [
-        'key' => self::FIELD_PREFIX . 'highlighted_memberships',
+        'key' => self::GROUP_PREFIX . 'highlighted_memberships',
         'title' => 'Highlighted membership plans',
         'fields' => [
             [
