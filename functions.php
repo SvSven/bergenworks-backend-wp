@@ -55,6 +55,7 @@ add_action('save_post', function($post_id, $post, $update) {
 require_once('includes/disable-editors.php');
 require_once('includes/api/v1/endpoints.php');
 require_once('includes/api/v1/custom-rest-fields.php');
+require_once('includes/post_types.php');
 
 /**
  * Functionality to extend Advanced Custom Fields

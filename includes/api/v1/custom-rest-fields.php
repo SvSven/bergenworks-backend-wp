@@ -13,7 +13,7 @@ add_action( 'rest_api_init', function () {
     ) );
 
     if (function_exists('get_fields')) {
-        register_rest_field( ['page', 'post'], 'acf_content', array(
+        register_rest_field( ['page', 'post', 'membership'], 'acf_content', array(
             'get_callback' => function($post) {
                 $page_content = new PageContent($post->ID);
                 $content = $page_content->get();
