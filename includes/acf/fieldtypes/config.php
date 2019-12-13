@@ -3,6 +3,7 @@ namespace bergenworks\acf\fieldtypes;
 
 use bergenworks\acf\fieldtypes\PageLink;
 use bergenworks\acf\fieldtypes\Image;
+use bergenworks\acf\fieldtypes\Relationship;
 
 if (!class_exists('acf_field')) return;
 
@@ -23,6 +24,7 @@ class FieldTypes {
 	public function include_field_types($version = false) {
 		new PageLink($this->settings);
 		new Image($this->settings);
+		new Relationship($this->settings);
 	}
 }
 new FieldTypes();
